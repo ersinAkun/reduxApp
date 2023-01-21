@@ -9,10 +9,11 @@ export const themeSlice = createSlice({
     reducers:{
         setDarkMode: (state, action) => {
             state.darkMood = action.payload;
-        }        
+        }
+
     }
 });
 
 export const {setDarkMode} = themeSlice.actions; 
 
-
+export default themeSlice.reducer;
