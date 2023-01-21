@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { localeSlice } from "./slices/locale-slice";
+import { localeSlice } from "./slices/localeslice";
 import { themeSlice } from "./slices/theme-slice";
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "flag-icons/css/flag-icons.min.css";
 
 export default configureStore({
     reducer: {
