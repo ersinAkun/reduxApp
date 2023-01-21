@@ -1,24 +1,20 @@
-import React from 'react'
-import { Form } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
-
+import React from "react";
+import { Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { setDarkMode } from "../../store/slices/theme-slice";
 const DarkModeSwitcher = () => {
-
-    const darkMode = useSelector( (state) => console.log(state) )
-
-
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  const dispatch = useDispatch();
   return (
     <div>
-      
-      <Form.Check 
+      <Form.Check
         type="switch"
-        id="custom-switch"
+        id="dmSwitch"
         label="Dark Mode"
-        checked= {false}
+        checked={darkMode}
+        onChange={ ()=>  dispatch(setDarkMode(!darkMode))}
       />
-
     </div>
-  )
-}
-
-export default DarkModeSwitcher
+  );
+};
+export default DarkModeSwitcher;
